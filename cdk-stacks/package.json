@@ -1,0 +1,40 @@
+{
+    "name": "cdk-stacks",
+    "version": "0.0.1",
+    "description": "AppFabric Data Analytics",
+    "main": "configure.js",
+    "scripts": {
+        "build": "tsc --skipLibCheck",
+        "watch": "tsc -w",
+        "test": "jest",
+        "cdk": "cdk",
+        "configure": "node configure.js -il",
+        "configure:test": "node configure.js -ilt",
+        "install:cdk-stacks": "npm install",
+        "install:all": "npm run install:cdk-stacks",
+        "echo:web-app-root-prefix": "node -e 'var config=require(`./config.params.json`); console.log(`${config.WebAppRootPrefix}`)' ",
+        "cdk:remove:context": "rm -f cdk.context.json",
+        "cdk:deploy": "npm run cdk:remove:context && cdk deploy --all --disable-rollback -c application_version=$npm_package_version",
+        "cdk:deploy:gitbash": "npm run cdk:remove:context && winpty cdk.cmd deploy --all --disable-rollback -c application_version=$npm_package_version",
+        "build:deploy:all": "npm run cdk:deploy",
+        "build:deploy:all:gitbash": "npm run cdk:deploy:gitbash",
+        "cdk:synth": "cdk synth -c application_version=$npm_package_version"
+    },
+    "author": "prod-apps-builder-team",
+    "license": "MIT-0",
+    "devDependencies": {
+        "@types/node": "^18.7.16",
+        "aws-cdk": "2.93.0",
+        "aws-cdk-lib": "2.93.0",
+        "cdk-nag": "^2.18.43",
+        "constructs": "^10.2.69",
+        "esbuild": "^0.19.2",
+        "jest": "^29.6.3",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.1.6"
+    },
+    "dependencies": {
+        "@aws-sdk/client-ssm": "^3.395.0",
+        "source-map-support": "^0.5.21"
+    }
+}

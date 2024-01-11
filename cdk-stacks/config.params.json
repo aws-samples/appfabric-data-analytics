@@ -1,0 +1,31 @@
+{
+    "CdkAppName": "AppFabricDataAnalytics",
+    "CdkBackendStack": "AppFabricDataAnalyticsBackend",
+    "hierarchy": "/AppFabricDataAnalytics/",
+    "parameters": [
+        {
+            "name": "awsGlueDatabaseName",
+            "cliFormat": "aws-glue-database-name",
+            "description": "AWS Glue Database to hold tables for AppFabric Data Analytics",
+            "defaultValue": "AppFabricDataAnalyticsDB",
+            "required": true
+        },
+        {
+            "name": "appFabricDataSourceS3URI",
+            "cliFormat": "appfabric-data-source-s3-uri",
+            "description": "The S3 uri of the data source. All folders and files contained in the S3 path are crawled. For example, enter s3://MyBucket/MyFolder/MySubfolder to crawl all objects in MySubfolder within MyBucket",
+            "required": true
+        },
+        {
+            "name": "appFabricDataSourceS3BucketName",
+            "cliFormat": "appfabric-data-source-s3-bucket-name",
+            "description": "The bucket name of the data source",
+            "required": true
+        }
+    ],
+    "tags": {
+        "project": "AppFabric Data Analytics starter project",
+        "os-code-source": "https://github.com/aws-samples/appfabric-data-analytics"
+    }
+
+}
