@@ -113,3 +113,7 @@ Although the code has been written with best practices in mind, your own company
 
 You take full ownership and responsibility for the code running in your environment, and are free to make whatever changes you need to.
 
+## License
+
+This library is licensed under the MIT-0 License. See the LICENSE file.
+
