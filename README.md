@@ -2,13 +2,13 @@
 
 ## What It Is
 
-AppFabric Data Analytics project enables you to maintain logs from various SaaS applications and gives you the ability to search and display the log data. This solution leverages [AWS AppFabric](https://aws.amazon.com/appfabric/) to create a data repository, which you can query with [Amazon Athena](https://aws.amazon.com/athena/). 
+The AppFabric Data Analytics project enables you to maintain logs from various SaaS applications and provides the ability to search and display log data. This solution leverages [AWS AppFabric](https://aws.amazon.com/appfabric/) to create a data repository that you can query with [Amazon Athena](https://aws.amazon.com/athena/).
 
-AWS Glue crawler will read directly from the AppFabric S3 bucket. Using S3 event notifications, each time a new object is written to S3 - it will be sent to a SQS queue. Glue will pull any new files from the SQS queue. The Glue crawler will then transform the data to optimize Athena queries by creating partitions based on Application, GUID, and date.
+The AWS Glue crawler will directly read from the AppFabric S3 bucket. Using S3 event notifications, each time a new object is written to S3, it will be sent to an SQS queue. Glue will pull any new files from the SQS queue. The Glue crawler will then transform the data to optimize Athena queries by creating partitions based on Application, GUID, and date.
 
 ## Use-case Scenario
 
-While customers can get normalized & enriched SaaS audit log data (OCSF) from AppFabric, many customers don't want to just ship these logs to a security tool. Some need to preserve logs for post incident analysis. Others need to use those logs to track SaaS subscription/license usage. Still others want to analyze user activity to discover patterns. This project creates a data pipeline that enables customers to build dashboards on top of it.
+While customers can obtain normalized and enriched SaaS audit log data (OCSF) from AppFabric, many prefer not only to forward these logs to a security tool. Some have the requirement to preserve logs for post-incident analysis, while others need to utilize the logs for tracking SaaS subscription and license usage. Additionally, some customers aim to analyze user activity to discover patterns. This project establishes a data pipeline that empowers customers to construct dashboards on top of it.
 
 ## Solution Components
 
