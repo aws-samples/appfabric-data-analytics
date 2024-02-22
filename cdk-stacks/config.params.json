@@ -17,10 +17,16 @@
             "required": true
         },
         {
-            "name": "appFabricDataSourceS3BucketName",
-            "cliFormat": "appfabric-data-source-s3-bucket-name",
-            "description": "The bucket name of the data source",
+            "name": "athenaQueryStorageS3URI",
+            "cliFormat": "athena-query-storage-s3-uri",
+            "description": "The S3 Bucket and Path (s3://MyBucket/Path/) of where Athena should store query results.  Query output will be encrypted using AWS Managed Keys",
             "required": true
+        },
+        {
+            "name": "quicksightAdminUsername",
+            "cliFormat": "quicksight-admin-username",
+            "description": "The Quicksight Principal Username copied in step 4.  Should look like Admin/[Quicksight Username]",
+            "required": false
         }
     ],
     "tags": {

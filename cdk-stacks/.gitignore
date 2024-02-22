@@ -26,3 +26,5 @@ cdk.context.json
 
 #build folder
 build
+
+.DS_Store

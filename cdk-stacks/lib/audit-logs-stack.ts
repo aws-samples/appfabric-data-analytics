@@ -55,13 +55,13 @@ export class AuditLogsStack extends Stack {
             actions: ['SQS:SendMessage'],
             resources: [eventProcessingQueue.queueArn],
             conditions: {
-                ArnEquals: {"aws:SourceArn": `arn:aws:s3:::${ssmParams.appFabricDataSourceS3BucketName}`}
+                ArnEquals: {"aws:SourceArn": `arn:aws:s3:::${parseS3BucketNameFromUri(ssmParams.appFabricDataSourceS3URI)}`}
             }
         }))
 
         //Create S3 Event notification
         //Use Lazy values to encode bucket name as a token and defer the calculation to synthesis time
-        const appFabricDataSourceBucket = s3.Bucket.fromBucketName(this, 'AppFabricDataSourceBucket', cdk.Lazy.string({produce: () => ssmParams.appFabricDataSourceS3BucketName}));
+        const appFabricDataSourceBucket = s3.Bucket.fromBucketName(this, 'AppFabricDataSourceBucket', cdk.Lazy.string({produce: () => parseS3BucketNameFromUri(ssmParams.appFabricDataSourceS3URI)}));
         appFabricDataSourceBucket.addEventNotification(s3.EventType.OBJECT_CREATED, new s3n.SqsDestination(eventProcessingQueue))
 
 
@@ -88,7 +88,7 @@ export class AuditLogsStack extends Stack {
         const s3Policy = new iam.Policy(this, 'S3Policy', {
             statements: [new iam.PolicyStatement({
                 actions: ['s3:GetObject', 's3:ListBucket', 's3:PutObject'],
-                resources: [`arn:aws:s3:::${ssmParams.appFabricDataSourceS3BucketName}`, `arn:aws:s3:::${ssmParams.appFabricDataSourceS3BucketName}/*`]
+                resources: [`arn:aws:s3:::${parseS3BucketNameFromUri(ssmParams.appFabricDataSourceS3URI)}`, `arn:aws:s3:::${parseS3BucketNameFromUri(ssmParams.appFabricDataSourceS3URI)}/*`]
             })]
         });
 
@@ -117,7 +117,7 @@ export class AuditLogsStack extends Stack {
 
         //Create Glue schedule object
         const scheduleProperty: glue.CfnCrawler.ScheduleProperty = {
-            scheduleExpression: 'cron(15 12 * * ? *)',
+            scheduleExpression: 'cron(15 12 * * ? *)', 
         };
 
         const cloudWatchKmsKey = new kms.Key(this, "CloudwatchEncryptionKey", {
@@ -241,6 +241,5 @@ export class AuditLogsStack extends Stack {
             installLatestAwsSdk: false,
         });
         customResource.node.addDependency(glueCrawler);
-
     }
 }

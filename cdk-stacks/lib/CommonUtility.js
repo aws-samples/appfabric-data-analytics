@@ -41,10 +41,23 @@ const inflateParseObject = (inputString) => {
     return parsedObject;
 }
 
+const parseS3BucketNameFromUri = (inputString) => {
+    try{
+        const bucketAndKey = inputString.split('://')[1];
+        const bucket = bucketAndKey.split('/')[0];
+        return bucket;
+    }
+    catch(err){
+        //console.warn('Weird value passed into parseS3BucketNameFromUri. Likely okay as this is a new parameter and should resolve.')
+        return ''
+    }
+}
+
 module.exports = {
     parseFileTimestampUTC,
     timestampMillisToISO,
     isInteger,
     deflateStringifyObject,
     inflateParseObject,
+    parseS3BucketNameFromUri
 }

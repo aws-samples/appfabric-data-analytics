@@ -13,7 +13,7 @@ export const loadSSMParams = (scope: Construct) => {
       params[param.name] = (ssm.StringParameter.valueFromLookup(scope, `${configParams.hierarchy}${param.name}`).toLowerCase() === "true");
     }
     else {
-      params[param.name] = ssm.StringParameter.valueFromLookup(scope, `${configParams.hierarchy}${param.name}`);
+      params[param.name] = fixDummyValueString(ssm.StringParameter.valueFromLookup(scope, `${configParams.hierarchy}${param.name}`));
     }
   }
   return { ...params, SSM_NOT_DEFINED }

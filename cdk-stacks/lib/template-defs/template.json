@@ -1,0 +1,1149 @@
+{
+    "Status": 200,
+    "Name": "AppFabric workshop dashboard template",
+    "TemplateId": "AppFabric_Workshop_Dashboard_Template",
+    "ResourceStatus": "CREATION_SUCCESSFUL",
+    "Definition": {
+        "DataSetConfigurations": [
+            {
+                "Placeholder": "AppFabricData",
+                "DataSetSchema": {
+                    "ColumnSchemaList": [
+                        {
+                            "Name": "type_name",
+                            "DataType": "STRING"
+                        },
+                        {
+                            "Name": "partition_4",
+                            "DataType": "STRING"
+                        },
+                        {
+                            "Name": "activity_id",
+                            "DataType": "INTEGER"
+                        },
+                        {
+                            "Name": "category_name",
+                            "DataType": "STRING"
+                        },
+                        {
+                            "Name": "activity_name",
+                            "DataType": "STRING"
+                        },
+                        {
+                            "Name": "status",
+                            "DataType": "STRING"
+                        },
+                        {
+                            "Name": "timestamp",
+                            "DataType": "DATETIME"
+                        },
+                        {
+                            "Name": "message",
+                            "DataType": "STRING"
+                        },
+                        {
+                            "Name": "severity",
+                            "DataType": "STRING"
+                        },
+                        {
+                            "Name": "partition_7",
+                            "DataType": "STRING"
+                        }
+                    ]
+                },
+                "ColumnGroupSchemaList": []
+            }
+        ],
+        "Sheets": [
+            {
+                "SheetId": "5913ca5f-1dc2-485d-866a-8e79252010c5",
+                "Name": "Sheet 1",
+                "Visuals": [
+                    {
+                        "ComboChartVisual": {
+                            "VisualId": "a10f7b8d-3e36-4e33-ba25-0f5a50a10b92",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>Activity Per Day</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "ComboChartAggregatedFieldWells": {
+                                        "Category": [
+                                            {
+                                                "DateDimensionField": {
+                                                    "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.2.1698883421653",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "timestamp"
+                                                    },
+                                                    "HierarchyId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.2.1698883421653"
+                                                }
+                                            }
+                                        ],
+                                        "BarValues": [],
+                                        "Colors": [
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.activity_name.2.1698899641055",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "activity_name"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "LineValues": []
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "CategorySort": [
+                                        {
+                                            "ColumnSort": {
+                                                "SortBy": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "partition_7"
+                                                },
+                                                "Direction": "ASC",
+                                                "AggregationFunction": {
+                                                    "CategoricalAggregationFunction": "COUNT"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "CategoryItemsLimit": {
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "ColorItemsLimit": {
+                                        "OtherCategories": "INCLUDE"
+                                    }
+                                },
+                                "BarsArrangement": "CLUSTERED",
+                                "Legend": {
+                                    "Width": "193px"
+                                },
+                                "BarDataLabels": {
+                                    "Visibility": "HIDDEN",
+                                    "Overlap": "DISABLE_OVERLAP"
+                                },
+                                "Tooltip": {
+                                    "TooltipVisibility": "VISIBLE",
+                                    "SelectedTooltipType": "DETAILED",
+                                    "FieldBasedTooltip": {
+                                        "AggregationVisibility": "HIDDEN",
+                                        "TooltipTitleType": "PRIMARY_VALUE",
+                                        "TooltipFields": [
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.2.1698883421653",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.activity_name.2.1698899641055",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "Actions": [],
+                            "ColumnHierarchies": [
+                                {
+                                    "DateTimeHierarchy": {
+                                        "HierarchyId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.2.1698883421653"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "KPIVisual": {
+                            "VisualId": "6156a05f-96ff-471f-aa58-d799674f9ad2",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title># of Activities In A Day</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.activity_id.0.1698883293394",
+                                                "Column": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "activity_id"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "COUNT"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "TargetValues": [],
+                                    "TrendGroups": [
+                                        {
+                                            "DateDimensionField": {
+                                                "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698883338239",
+                                                "Column": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "timestamp"
+                                                },
+                                                "HierarchyId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698883338239"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "SortConfiguration": {
+                                    "TrendGroupSort": [
+                                        {
+                                            "FieldSort": {
+                                                "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698883338239",
+                                                "Direction": "DESC"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "KPIOptions": {
+                                    "Comparison": {
+                                        "ComparisonMethod": "PERCENT_DIFFERENCE"
+                                    },
+                                    "PrimaryValueDisplayType": "ACTUAL",
+                                    "SecondaryValueFontConfiguration": {
+                                        "FontSize": {
+                                            "Relative": "EXTRA_LARGE"
+                                        }
+                                    }
+                                }
+                            },
+                            "ConditionalFormatting": {
+                                "ConditionalFormattingOptions": [
+                                    {},
+                                    {},
+                                    {},
+                                    {}
+                                ]
+                            },
+                            "Actions": [],
+                            "ColumnHierarchies": [
+                                {
+                                    "DateTimeHierarchy": {
+                                        "HierarchyId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698883338239"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "BarChartVisual": {
+                            "VisualId": "8e6200c1-b703-4b0c-9e82-3b5ecc780043",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>Severity Types</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "BarChartAggregatedFieldWells": {
+                                        "Category": [
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.severity.0.1698884206718",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "severity"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Values": [],
+                                        "Colors": []
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "CategoryItemsLimit": {
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "ColorItemsLimit": {
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "SmallMultiplesLimitConfiguration": {
+                                        "OtherCategories": "INCLUDE"
+                                    }
+                                },
+                                "Orientation": "HORIZONTAL",
+                                "BarsArrangement": "CLUSTERED",
+                                "DataLabels": {
+                                    "Visibility": "HIDDEN",
+                                    "Overlap": "DISABLE_OVERLAP"
+                                },
+                                "Tooltip": {
+                                    "TooltipVisibility": "VISIBLE",
+                                    "SelectedTooltipType": "DETAILED",
+                                    "FieldBasedTooltip": {
+                                        "AggregationVisibility": "HIDDEN",
+                                        "TooltipTitleType": "PRIMARY_VALUE",
+                                        "TooltipFields": [
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.severity.0.1698884206718",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "Actions": [],
+                            "ColumnHierarchies": []
+                        }
+                    },
+                    {
+                        "PivotTableVisual": {
+                            "VisualId": "63b3d387-8953-4598-be04-88dd60779a97",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>ERROR/WARN Logs</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "PivotTableAggregatedFieldWells": {
+                                        "Rows": [
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.severity.0.1698884252449",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "severity"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.message.1.1698884253809",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "message"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Columns": [
+                                            {
+                                                "DateDimensionField": {
+                                                    "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.2.1698884261174",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "timestamp"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Values": []
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "FieldSortOptions": []
+                                },
+                                "TableOptions": {
+                                    "ColumnHeaderStyle": {},
+                                    "CellStyle": {
+                                        "Height": 25
+                                    },
+                                    "RowAlternateColorOptions": {
+                                        "Status": "DISABLED",
+                                        "UsePrimaryBackgroundColor": "ENABLED"
+                                    },
+                                    "CollapsedRowDimensionsVisibility": "HIDDEN",
+                                    "RowsLayout": "HIERARCHY"
+                                },
+                                "TotalOptions": {
+                                    "RowSubtotalOptions": {
+                                        "TotalsVisibility": "VISIBLE",
+                                        "CustomLabel": "<<$aws:subtotalDimension>> Subtotal",
+                                        "TotalCellStyle": {},
+                                        "ValueCellStyle": {},
+                                        "MetricHeaderCellStyle": {},
+                                        "StyleTargets": [
+                                            {
+                                                "CellType": "VALUE"
+                                            },
+                                            {
+                                                "CellType": "TOTAL"
+                                            },
+                                            {
+                                                "CellType": "METRIC_HEADER"
+                                            }
+                                        ]
+                                    },
+                                    "RowTotalOptions": {
+                                        "Placement": "AUTO"
+                                    },
+                                    "ColumnTotalOptions": {
+                                        "Placement": "END"
+                                    }
+                                },
+                                "FieldOptions": {
+                                    "SelectedFieldOptions": [
+                                        {
+                                            "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.severity.0.1698884252449",
+                                            "Visibility": "VISIBLE"
+                                        },
+                                        {
+                                            "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.message.1.1698884253809",
+                                            "Visibility": "VISIBLE"
+                                        },
+                                        {
+                                            "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.2.1698884261174",
+                                            "Visibility": "VISIBLE"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Actions": []
+                        }
+                    },
+                    {
+                        "HeatMapVisual": {
+                            "VisualId": "dc746113-472a-490a-8708-c11e43b9b523",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title># of Activity Types Per Day</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "HeatMapAggregatedFieldWells": {
+                                        "Rows": [
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.activity_name.0.1698896576426",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "activity_name"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Columns": [
+                                            {
+                                                "DateDimensionField": {
+                                                    "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698896578726",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "timestamp"
+                                                    },
+                                                    "HierarchyId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698896578726"
+                                                }
+                                            }
+                                        ],
+                                        "Values": []
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "HeatMapColumnSort": [
+                                        {
+                                            "FieldSort": {
+                                                "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698896578726",
+                                                "Direction": "DESC"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "Legend": {
+                                    "Visibility": "HIDDEN"
+                                },
+                                "DataLabels": {
+                                    "Visibility": "VISIBLE",
+                                    "Overlap": "DISABLE_OVERLAP"
+                                },
+                                "Tooltip": {
+                                    "TooltipVisibility": "VISIBLE",
+                                    "SelectedTooltipType": "DETAILED",
+                                    "FieldBasedTooltip": {
+                                        "AggregationVisibility": "HIDDEN",
+                                        "TooltipTitleType": "PRIMARY_VALUE",
+                                        "TooltipFields": [
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.activity_name.0.1698896576426",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698896578726",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "ColumnHierarchies": [
+                                {
+                                    "DateTimeHierarchy": {
+                                        "HierarchyId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698896578726"
+                                    }
+                                }
+                            ],
+                            "Actions": []
+                        }
+                    },
+                    {
+                        "PieChartVisual": {
+                            "VisualId": "5497d7a8-55ab-49b4-8c55-da9183917e94",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>Last 7 Days Traffic Ratio by SaaS Applications</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "PieChartAggregatedFieldWells": {
+                                        "Category": [
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.2.1698896989977",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "partition_4"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Values": [
+                                            {
+                                                "CategoricalMeasureField": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.0.1698896933984",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "partition_4"
+                                                    },
+                                                    "AggregationFunction": "COUNT"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "CategorySort": [
+                                        {
+                                            "FieldSort": {
+                                                "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.0.1698896933984",
+                                                "Direction": "DESC"
+                                            }
+                                        }
+                                    ],
+                                    "CategoryItemsLimit": {
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "SmallMultiplesLimitConfiguration": {
+                                        "OtherCategories": "INCLUDE"
+                                    }
+                                },
+                                "DonutOptions": {
+                                    "ArcOptions": {
+                                        "ArcThickness": "WHOLE"
+                                    }
+                                },
+                                "CategoryLabelOptions": {
+                                    "Visibility": "HIDDEN",
+                                    "SortIconVisibility": "HIDDEN"
+                                },
+                                "ValueLabelOptions": {
+                                    "Visibility": "HIDDEN",
+                                    "SortIconVisibility": "HIDDEN"
+                                },
+                                "Legend": {
+                                    "Visibility": "HIDDEN",
+                                    "Width": "100px"
+                                },
+                                "DataLabels": {
+                                    "Visibility": "VISIBLE",
+                                    "CategoryLabelVisibility": "VISIBLE",
+                                    "MeasureLabelVisibility": "VISIBLE",
+                                    "Position": "INSIDE",
+                                    "LabelContent": "PERCENT",
+                                    "Overlap": "ENABLE_OVERLAP"
+                                },
+                                "Tooltip": {
+                                    "TooltipVisibility": "VISIBLE",
+                                    "SelectedTooltipType": "BASIC",
+                                    "FieldBasedTooltip": {
+                                        "AggregationVisibility": "HIDDEN",
+                                        "TooltipTitleType": "PRIMARY_VALUE",
+                                        "TooltipFields": [
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.2.1698896989977",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.2.1698896989977",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "Actions": [],
+                            "ColumnHierarchies": []
+                        }
+                    },
+                    {
+                        "TableVisual": {
+                            "VisualId": "4f898c18-94cb-4631-b152-bc860567babc",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>Events Based On Timeline</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "TableUnaggregatedFieldWells": {
+                                        "Values": [
+                                            {
+                                                "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.2.1698947418799",
+                                                "Column": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "timestamp"
+                                                }
+                                            },
+                                            {
+                                                "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.1.1698947396992",
+                                                "Column": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "partition_4"
+                                                }
+                                            },
+                                            {
+                                                "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.category_name.5.1698948055661",
+                                                "Column": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "category_name"
+                                                }
+                                            },
+                                            {
+                                                "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.type_name.3.1698947483793",
+                                                "Column": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "type_name"
+                                                }
+                                            },
+                                            {
+                                                "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.status.5.1698957749399",
+                                                "Column": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "status"
+                                                }
+                                            },
+                                            {
+                                                "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.message.0.1698947360536",
+                                                "Column": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "message"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "RowSort": [
+                                        {
+                                            "FieldSort": {
+                                                "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.2.1698947418799",
+                                                "Direction": "DESC"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "TableOptions": {
+                                    "HeaderStyle": {
+                                        "TextWrap": "WRAP",
+                                        "Height": 25
+                                    },
+                                    "RowAlternateColorOptions": {
+                                        "Status": "DISABLED",
+                                        "UsePrimaryBackgroundColor": "ENABLED"
+                                    }
+                                },
+                                "FieldOptions": {
+                                    "SelectedFieldOptions": [
+                                        {
+                                            "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.2.1698947418799",
+                                            "CustomLabel": "time"
+                                        },
+                                        {
+                                            "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.1.1698947396992",
+                                            "CustomLabel": "application"
+                                        },
+                                        {
+                                            "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.category_name.5.1698948055661",
+                                            "Width": "189px"
+                                        },
+                                        {
+                                            "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.type_name.3.1698947483793",
+                                            "Width": "313px",
+                                            "CustomLabel": "type"
+                                        }
+                                    ],
+                                    "Order": []
+                                }
+                            },
+                            "ConditionalFormatting": {
+                                "ConditionalFormattingOptions": [
+                                    {
+                                        "Cell": {
+                                            "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.status.5.1698957749399",
+                                            "TextFormat": {
+                                                "BackgroundColor": {
+                                                    "Solid": {
+                                                        "Expression": "{status} = \"Failure\"",
+                                                        "Color": "#DE3B00"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "Actions": []
+                        }
+                    },
+                    {
+                        "BarChartVisual": {
+                            "VisualId": "b906d837-3486-4095-a99c-2ab549fb4923",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>Application Usage Volume</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "BarChartAggregatedFieldWells": {
+                                        "Category": [
+                                            {
+                                                "DateDimensionField": {
+                                                    "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698959006560",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "timestamp"
+                                                    },
+                                                    "HierarchyId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698959006560"
+                                                }
+                                            }
+                                        ],
+                                        "Values": [
+                                            {
+                                                "CategoricalMeasureField": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.0.1698958977288",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "partition_4"
+                                                    },
+                                                    "AggregationFunction": "COUNT"
+                                                }
+                                            }
+                                        ],
+                                        "Colors": [
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.2.1698959245940",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "AppFabricData",
+                                                        "ColumnName": "partition_4"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "CategorySort": [
+                                        {
+                                            "FieldSort": {
+                                                "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698959006560",
+                                                "Direction": "ASC"
+                                            }
+                                        }
+                                    ],
+                                    "CategoryItemsLimit": {
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "ColorItemsLimit": {
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "SmallMultiplesLimitConfiguration": {
+                                        "OtherCategories": "INCLUDE"
+                                    }
+                                },
+                                "Orientation": "VERTICAL",
+                                "BarsArrangement": "STACKED",
+                                "ValueAxis": {
+                                    "TickLabelOptions": {
+                                        "LabelOptions": {
+                                            "Visibility": "VISIBLE",
+                                            "FontConfiguration": {
+                                                "FontSize": {
+                                                    "Relative": "MEDIUM"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "ValueLabelOptions": {
+                                    "Visibility": "VISIBLE",
+                                    "AxisLabelOptions": [
+                                        {
+                                            "CustomLabel": "application type",
+                                            "ApplyTo": {
+                                                "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.0.1698958977288",
+                                                "Column": {
+                                                    "DataSetIdentifier": "AppFabricData",
+                                                    "ColumnName": "partition_4"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "Legend": {
+                                    "Visibility": "HIDDEN"
+                                },
+                                "DataLabels": {
+                                    "Visibility": "VISIBLE",
+                                    "Overlap": "DISABLE_OVERLAP"
+                                },
+                                "Tooltip": {
+                                    "TooltipVisibility": "VISIBLE",
+                                    "SelectedTooltipType": "DETAILED",
+                                    "FieldBasedTooltip": {
+                                        "AggregationVisibility": "HIDDEN",
+                                        "TooltipTitleType": "PRIMARY_VALUE",
+                                        "TooltipFields": [
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.2.1698959245940",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698959006560",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "f148e5e5-ff27-4700-a7bc-252877fbd49f.partition_4.2.1698959245940",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "Actions": [],
+                            "ColumnHierarchies": [
+                                {
+                                    "DateTimeHierarchy": {
+                                        "HierarchyId": "2c559f03-a9ad-45c3-b5c1-a98a8b4165d8.1.1698959006560"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "Layouts": [
+                    {
+                        "Configuration": {
+                            "GridLayout": {
+                                "Elements": [
+                                    {
+                                        "ElementId": "6156a05f-96ff-471f-aa58-d799674f9ad2",
+                                        "ElementType": "VISUAL",
+                                        "ColumnIndex": 0,
+                                        "ColumnSpan": 8,
+                                        "RowIndex": 0,
+                                        "RowSpan": 6
+                                    },
+                                    {
+                                        "ElementId": "5497d7a8-55ab-49b4-8c55-da9183917e94",
+                                        "ElementType": "VISUAL",
+                                        "ColumnIndex": 8,
+                                        "ColumnSpan": 8,
+                                        "RowIndex": 0,
+                                        "RowSpan": 6
+                                    },
+                                    {
+                                        "ElementId": "8e6200c1-b703-4b0c-9e82-3b5ecc780043",
+                                        "ElementType": "VISUAL",
+                                        "ColumnIndex": 16,
+                                        "ColumnSpan": 8,
+                                        "RowIndex": 0,
+                                        "RowSpan": 6
+                                    },
+                                    {
+                                        "ElementId": "63b3d387-8953-4598-be04-88dd60779a97",
+                                        "ElementType": "VISUAL",
+                                        "ColumnIndex": 24,
+                                        "ColumnSpan": 10,
+                                        "RowIndex": 0,
+                                        "RowSpan": 6
+                                    },
+                                    {
+                                        "ElementId": "a10f7b8d-3e36-4e33-ba25-0f5a50a10b92",
+                                        "ElementType": "VISUAL",
+                                        "ColumnIndex": 0,
+                                        "ColumnSpan": 19,
+                                        "RowIndex": 6,
+                                        "RowSpan": 7
+                                    },
+                                    {
+                                        "ElementId": "dc746113-472a-490a-8708-c11e43b9b523",
+                                        "ElementType": "VISUAL",
+                                        "ColumnIndex": 19,
+                                        "ColumnSpan": 15,
+                                        "RowIndex": 6,
+                                        "RowSpan": 7
+                                    },
+                                    {
+                                        "ElementId": "b906d837-3486-4095-a99c-2ab549fb4923",
+                                        "ElementType": "VISUAL",
+                                        "ColumnIndex": 0,
+                                        "ColumnSpan": 10,
+                                        "RowIndex": 13,
+                                        "RowSpan": 6
+                                    },
+                                    {
+                                        "ElementId": "4f898c18-94cb-4631-b152-bc860567babc",
+                                        "ElementType": "VISUAL",
+                                        "ColumnIndex": 10,
+                                        "ColumnSpan": 24,
+                                        "RowIndex": 13,
+                                        "RowSpan": 6
+                                    }
+                                ],
+                                "CanvasSizeOptions": {
+                                    "ScreenCanvasSizeOptions": {
+                                        "ResizeOption": "FIXED",
+                                        "OptimizedViewPortWidth": "1600px"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ContentType": "INTERACTIVE"
+            }
+        ],
+        "CalculatedFields": [],
+        "ParameterDeclarations": [],
+        "FilterGroups": [
+            {
+                "FilterGroupId": "5224feb2-6d0e-4976-bf94-e0e10580fc19",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "22c93171-8597-4666-9a6d-5dd3aa35d73f",
+                            "Column": {
+                                "DataSetIdentifier": "AppFabricData",
+                                "ColumnName": "severity"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "DOES_NOT_CONTAIN",
+                                    "CategoryValues": [
+                                        "INFO"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "5913ca5f-1dc2-485d-866a-8e79252010c5",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "63b3d387-8953-4598-be04-88dd60779a97"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "74ffe188-2561-4e9a-98ab-dff55aa132c7",
+                "Filters": [
+                    {
+                        "RelativeDatesFilter": {
+                            "FilterId": "9a03c5af-a598-4d12-99e4-bc8ae51b8be3",
+                            "Column": {
+                                "DataSetIdentifier": "AppFabricData",
+                                "ColumnName": "timestamp"
+                            },
+                            "AnchorDateConfiguration": {
+                                "AnchorOption": "NOW"
+                            },
+                            "MinimumGranularity": "DAY",
+                            "TimeGranularity": "DAY",
+                            "RelativeDateType": "LAST",
+                            "RelativeDateValue": 7,
+                            "NullOption": "NON_NULLS_ONLY"
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "5913ca5f-1dc2-485d-866a-8e79252010c5",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "5497d7a8-55ab-49b4-8c55-da9183917e94"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "479c820f-57d0-4343-9560-ef492cbdde45",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "aa6169e1-2de5-403b-90b5-e02585f12cc1",
+                            "Column": {
+                                "DataSetIdentifier": "AppFabricData",
+                                "ColumnName": "type_name"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "DOES_NOT_CONTAIN",
+                                    "CategoryValues": [
+                                        "Web Resource Access Activity: Access Grant"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "5913ca5f-1dc2-485d-866a-8e79252010c5",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "4f898c18-94cb-4631-b152-bc860567babc"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "d8d12cba-acac-4318-903a-ffa40d064cf6",
+                "Filters": [
+                    {
+                        "RelativeDatesFilter": {
+                            "FilterId": "e09a5616-178f-42bc-a26d-1462d18f3441",
+                            "Column": {
+                                "DataSetIdentifier": "AppFabricData",
+                                "ColumnName": "timestamp"
+                            },
+                            "AnchorDateConfiguration": {
+                                "AnchorOption": "NOW"
+                            },
+                            "MinimumGranularity": "DAY",
+                            "TimeGranularity": "DAY",
+                            "RelativeDateType": "LAST",
+                            "RelativeDateValue": 7,
+                            "NullOption": "NON_NULLS_ONLY"
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "5913ca5f-1dc2-485d-866a-8e79252010c5",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "4f898c18-94cb-4631-b152-bc860567babc"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            }
+        ],
+        "AnalysisDefaults": {
+            "DefaultNewSheetConfiguration": {
+                "InteractiveLayoutConfiguration": {
+                    "Grid": {
+                        "CanvasSizeOptions": {
+                            "ScreenCanvasSizeOptions": {
+                                "ResizeOption": "FIXED",
+                                "OptimizedViewPortWidth": "1600px"
+                            }
+                        }
+                    }
+                },
+                "SheetContentType": "INTERACTIVE"
+            }
+        }
+    },
+    "RequestId": "c8d6e22d-a2d7-4071-b16b-4721f3e9101b"
+}
