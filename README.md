@@ -58,8 +58,7 @@ You can follow the steps from either of the below links to get this AppFabric se
 * Docker [installed](https://docs.docker.com/get-docker/) (for deploying OpenSearch only; used for packaging python libraries to Lambda function)
 
 ## Solution Setup (Amazon Athena)
-
-The below instructions show how to deploy the solution using AWS CDK CLI.
+The below instructions show how to deploy the solution using AWS CDK CLI. If you are using a Windows device please use the Git BASH terminal and use alternative commands where highlighted.
 
 These instructions assume you have completed all the prerequisites, and you have an existing Amazon Connect instance, SSO/SAML enabled.
 
@@ -95,7 +94,8 @@ These instructions assume you have completed all the prerequisites, and you have
     - In your terminal navigate to `appfabric-data-analytics/cdk-stacks`
     - If you have started with a new environment, please bootstrap CDK: `cdk bootstrap`
     - Deploy the CDK Stack
-        - IF you are deploying the optional QuickSight Stack: Run the script: `npm run cdk:deploy:base`
+        - Run the script: `npm run cdk:deploy:base`
+            - On Windows devices use `cdk:deploy:gitbash:base`
     - Wait for all resources to be provisioned before continuing to the next step
     - AWS CDK output will be provided in your Terminal 
 
@@ -115,7 +115,7 @@ These instructions assume you have completed all the prerequisites, and you have
 
 ## Solution Setup (QuickSight Dashboard)
 
-> Note: Before deploying this stack, you need to wait till the Glue Crawler in the previous step finishes running. The Glue crawler runs once automatically after the CDK deployment. Check the status of the crawler in the Glue Console, under the section "Crawler runs". After the crawler is done running, you will see Athena Glue table created.
+> Note: Before deploying this stack, you need to deploy the [Solution Setup (Amazon Athena)](#solution-setup-amazon-athena) solution first and wait untill the Glue Crawler in the previous step finishes running. The Glue crawler runs once automatically after the CDK deployment. Check the status of the crawler in the Glue Console, under the section "Crawler runs". After the crawler is done running, you will see Athena Glue table created.
 
 1. Configure Quicksight (Optional)
     - Make note of the S3 buckets used for AppFabric Above and Athena Query Results.  If a bucket for Athena Query results doesn't already exist, please create one.
@@ -139,6 +139,7 @@ These instructions assume you have completed all the prerequisites, and you have
 3. Deploy CDK stacks
     - In your terminal navigate to `appfabric-data-analytics/cdk-stacks`
     - Deploy the QuickSight CDK Stack: `npm run cdk:deploy:quicksight`
+        - On Windows devices use `cdk:deploy:gitbash:quicksight`
     - Wait for all resources to be provisioned before continuing to the next step
 
 4. Test the solution
@@ -149,6 +150,7 @@ These instructions assume you have completed all the prerequisites, and you have
 1. Deploy CDK stacks
     - In your terminal navigate to `appfabric-data-analytics/cdk-stacks`
     - Deploy the QuickSight CDK Stack: `npm run cdk:deploy:opensearch`
+        - On Windows devices use `cdk:deploy:gitbash:opensearch`
     - Wait for all resources to be provisioned before continuing to the next step
 
 2. Test the solution
