@@ -27,6 +27,12 @@
             "cliFormat": "quicksight-admin-username",
             "description": "The Quicksight Principal Username copied in step 4.  Should look like Admin/[Quicksight Username]",
             "required": false
+        },
+        {
+            "name": "athenaTable",
+            "cliFormat": "athena-table",
+            "description": "The name of the Athena table that was generated at 'base' stack deployment",
+            "required": false
         }
     ],
     "tags": {
