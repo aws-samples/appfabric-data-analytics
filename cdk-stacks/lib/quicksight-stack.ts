@@ -24,7 +24,7 @@ export class QuicksightStack extends Stack {
 
         const ssmParams = loadSSMParams(this);
         const qsPrincipalARN = `arn:aws:quicksight:${this.region}:${this.account}:user/default/${ssmParams.quicksightAdminUsername}`;
-        const athenaDatabase = 'AppFabricDataAnalyticsDB';
+        const athenaDatabase = ssmParams.awsGlueDatabaseName;
         const athenaTable = ssmParams.athenaTable;
         const athenaOutputURI = ssmParams.athenaQueryStorageS3URI;
 
@@ -33,6 +33,7 @@ export class QuicksightStack extends Stack {
           handler: 'index.handler',
           code: Code.fromAsset('lib/lambda/createView'),
           environment: { 
+            ATHENA_DATABASE: athenaDatabase.toLowerCase() || "",
             ATHENA_TABLE: athenaTable || "",
             ATHENA_OUTPUT_URI: athenaOutputURI || "",
             REGION: this.region

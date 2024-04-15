@@ -1,6 +1,7 @@
 import boto3
 import os
 
+ATHENA_DATABASE = os.environ['ATHENA_DATABASE']
 ATHENA_TABLE = os.environ['ATHENA_TABLE']
 ATHENA_OUTPUT_URI = os.environ['ATHENA_OUTPUT_URI']
 REGION = os.environ['REGION']
@@ -11,7 +12,7 @@ def handler(event, context):
 
     # Define the SQL query to create or replace the view
     query = f"""
-        CREATE OR REPLACE VIEW "appfabricdataanalyticsdb"."view_{ATHENA_TABLE}" AS
+        CREATE OR REPLACE VIEW "{ATHENA_DATABASE}"."view_{ATHENA_TABLE}" AS
         SELECT
             activity_id,
             activity_name,
@@ -54,11 +55,7 @@ def handler(event, context):
             device.os.name AS os_name,
             device.os.type AS os_type
         FROM "appfabricdataanalyticsdb"."{ATHENA_TABLE}"
-    """ 
-    #     CASE
-    #     WHEN LENGTH(CAST(time AS VARCHAR)) >= 13 THEN CAST(from_unixtime(time / 1000) AS TIMESTAMP)
-    #     ELSE CAST(from_unixtime(time) AS TIMESTAMP)
-    # END AS timestamp,
+    """
 
     # Start the query execution
     response = athena_client.start_query_execution(
