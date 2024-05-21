@@ -1,5 +1,9 @@
 # AppFabric Data Analytics
 
+## What's New
+
+1.1.3 - Added QuickSight dashboard on license optimization 
+
 ## What It Is
 
 AppFabric Data Analytics project enables you to maintain logs from various SaaS applications and gives you the ability to search and display the log data on a dashboard. This solution leverages [AWS AppFabric](https://aws.amazon.com/appfabric/) to help ingest and normalize audit logs from your SaaS applications to create data repository.
