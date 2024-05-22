@@ -17,6 +17,9 @@ This solution supports two different analysis options:
 Sample QuickSight Dashboard
 ![Sample QuickSight Dashboard](quicksight-configuration/dashboard.png)
 
+Sample QuickSight Dashboard for License Optimization
+![Sample QuickSight Dashboard - License Optimization](quicksight-configuration/dashboard-license-optimization.png)
+
 Sample OpenSearch Dashboard
 ![Sample OpenSearch Dashboard](opensearch-configuration/dashboard.png)
 
