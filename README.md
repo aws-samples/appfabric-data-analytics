@@ -4,8 +4,8 @@
 
 ## What's New
 
-1.1.5 - Supported Japanese
-1.1.4 - Added QuickSight dashboard on license optimization 
+* 1.1.5 - Supported Japanese
+* 1.1.4 - Added QuickSight dashboard on license optimization 
 
 ## What It Is
 
