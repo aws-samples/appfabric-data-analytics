@@ -8,6 +8,8 @@ import {CfnDeliveryStream} from 'aws-cdk-lib/aws-kinesisfirehose';
 import {Bucket} from 'aws-cdk-lib/aws-s3';
 import {NagSuppressions} from 'cdk-nag'
 import path = require('path');
+import { loadSSMParams } from '../lib/infrastructure/ssm-params-util';
+
 
 const configParams = require('../config.params.json');
 const {parseS3BucketNameFromUri} = require('../lib/CommonUtility');
@@ -24,6 +26,9 @@ export class OpenSearchStack extends Stack {
             id: 'AwsSolutions-IAM5',
             reason: 'The wildcard s3:* is needed to grant permissions to all the objects in the bucket. This nag also applied to the Lambda handler in the Customer Resources deployed under the hood'
         }])
+
+        const ssmParams = loadSSMParams(this);
+        const langOption = ssmParams.langOption;
 
         ////////////////////////////////////////////////////////
         // setup OpenSearch Serverless security policy
@@ -205,7 +210,8 @@ export class OpenSearchStack extends Stack {
                 },
             }),
             environment: {
-                OSS_ENDPOINT: ossCollection.attrCollectionEndpoint
+                OSS_ENDPOINT: ossCollection.attrCollectionEndpoint,
+                LANG_OPTION: langOption
             },
             role: ossDeployRoleForLambda,
             handler: 'index.handler',

@@ -33,6 +33,12 @@
             "cliFormat": "athena-table",
             "description": "The name of the Athena table that was generated at 'base' stack deployment",
             "required": false
+        },
+        {
+            "name": "langOption",
+            "cliFormat": "lang-option",
+            "description": "The language that will be used (if exists) on dashboards",
+            "required": false
         }
     ],
     "tags": {

@@ -1,5 +1,7 @@
 # AppFabric Data Analytics
 
+[View this page in Japanese (日本語)](README_ja.md)
+
 ## What's New
 
 1.1.3 - Added QuickSight dashboard on license optimization 
@@ -54,6 +56,7 @@ You can follow the steps from either of the below links to get this AppFabric se
 * [Getting started with AWS AppFabric for security](https://docs.aws.amazon.com/appfabric/latest/adminguide/getting-started-security.html)
 * [Connecting SaaS Application to AWS AppFabric](https://catalog.us-east-1.prod.workshops.aws/workshops/5eef6b5e-7cf0-427b-85fc-1c6ad173db14/en-US/300-appfabric)
 
+Alternatively, by using this [AppFabric Sample Log Generator](https://github.com/aws-samples/appfabric-sample-log-generator), you can obtain OCSF-compliant audit logs from multiple SaaS applications as samples. This is recommended for those who want to first view a dashboard with sample data (as if it were output from AppFabric).
 
 ## Solution Prerequisites
 * AWS Account
@@ -67,7 +70,7 @@ You can follow the steps from either of the below links to get this AppFabric se
 ## Solution Setup (Amazon Athena)
 The below instructions show how to deploy the solution using AWS CDK CLI. If you are using a Windows device please use the Git BASH terminal and use alternative commands where highlighted.
 
-These instructions assume you have completed all the prerequisites, and you have an existing Amazon Connect instance, SSO/SAML enabled.
+These instructions assume you have completed all the prerequisites.
 
 1. Clone the solution to your computer (using `git clone`)
 
@@ -142,6 +145,7 @@ These instructions assume you have completed all the prerequisites, and you have
         - `appfabric-data-source-s3-uri`: The S3 uri of the data source. All folders and files contained in the S3 path are crawled. For example, enter s3://MyBucket/MyFolder/MySubfolder to crawl all objects in MySubfolder within MyBucket
         - `athena-query-storage-s3-uri`: The S3 Bucket and Path (s3://MyBucket/Path/) of where Athena should store query results.  Query output will be encrypted using AWS Managed Keys
         - `quicksight-admin-username`: The Quicksight Principal Username copied in the previous step.  Should look like `Admin/[Quicksight Username]`
+        - `lang-option`: The language of the dashboard template that will be used if exists. Current supported language [en, ja]. Default uses 'en'
 
 3. Deploy CDK stacks
     - In your terminal navigate to `appfabric-data-analytics/cdk-stacks`
@@ -156,8 +160,9 @@ These instructions assume you have completed all the prerequisites, and you have
 
 1. Deploy CDK stacks
     - In your terminal navigate to `appfabric-data-analytics/cdk-stacks`
-    - Deploy the QuickSight CDK Stack: `npm run cdk:deploy:opensearch`
+    - Deploy the OpenSearch CDK Stack: `npm run cdk:deploy:opensearch`
         - On Windows devices use `cdk:deploy:gitbash:opensearch`
+        - Note: If Docker-related errors appear, it is likely because Docker is not running. Please review the [Prerequisites](#solution-prerequisites) again.
     - Wait for all resources to be provisioned before continuing to the next step
 
 2. Test the solution

@@ -24,7 +24,7 @@ export class QuickSightTemplateConstruct extends Construct {
         const { account, region } = Stack.of(this);
         const quicksightDevsGroupArn = util.getQuicksightGroupArn(region, account);
 
-        const buffer = readFileSync(templatePath, { encoding: 'latin1'});
+        const buffer = readFileSync(templatePath, { encoding: 'utf8'});
         const jsonObj = JSON.parse(buffer);
         delete jsonObj.ThemeArn;
         delete jsonObj.Status;

@@ -19,6 +19,7 @@ def import_data(event, _):
 
     REGION = os.environ['AWS_REGION']
     ENDPOINT = os.environ['OSS_ENDPOINT']
+    LANG_OPTION = os.environ['LANG_OPTION']
     AOS_SERVICE = 'aoss'
 
     credentials = boto3.Session().get_credentials()
@@ -26,10 +27,12 @@ def import_data(event, _):
 
     url = (f'{ENDPOINT}/_dashboards/api/saved_objects/_import?overwrite=true')
     headers = {'osd-xsrf': 'true'}
+    template = 'dashboard_ja.ndjson' if LANG_OPTION == 'ja' else 'dashboard.ndjson'
+
     for attempt in range(1, MAX_RETRIES + 1):
         print(f"Import Attempt {attempt}")
-        if os.path.exists('dashboard.ndjson'):
-            with open('dashboard.ndjson', 'rb') as fd:
+        if os.path.exists(template):
+            with open(template, 'rb') as fd:
                 response = requests.post(
                     url=url, 
                     files={'file': fd},

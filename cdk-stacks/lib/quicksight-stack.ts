@@ -339,8 +339,10 @@ export class QuicksightStack extends Stack {
       })
 
       //Template and Analysis
+      const template = (ssmParams.langOption=='ja') ? 'template-ja.json' : 'template.json';
+
       new QuickSightTemplateConstruct(this, 'appfabric', {
-          templateDefinitionSource: path.join(__dirname, 'template-defs', 'template.json'),
+          templateDefinitionSource: path.join(__dirname, 'template-defs', template),
           dataSets: {
               "AppFabricData": cfnDataSet.attrArn,
           },
