@@ -13,7 +13,7 @@ AppFabricデータ分析プロジェクトは、さまざまなSaaSアプリケ�
 
 このソリューションは、次の2つの分析オプションをサポートします：
 
-1. [Amazon Athena](https://aws.amazon.com/athena/)でデータをクエリし、必要に応じてサンプルの[Amazon QuickSight](https://aws.amazon.com/quicksight/)ダッシュボードをデプロイします。**このダッシュボードをデプロイしない場合は、QuickSightのオプション手順はスキップしてください。**
+1. [Amazon Athena](https://aws.amazon.com/athena/)でデータをクエリし、必要に応じてサンプルの[Amazon QuickSight](https://aws.amazon.com/quicksight/)ダッシュボードをデプロイします。**このダッシュボードをデプロイしない場合は、QuickSightのオプション項目はスキップしてください。**
 
 2. AppFabricデータを視覚化するために[Amazon OpenSearch](https://aws.amazon.com/opensearch-service/)ダッシュボードをデプロイします。
 
