@@ -27,7 +27,7 @@
     "devDependencies": {
         "@types/node": "^18.19.28",
         "aws-cdk": "2.93.0",
-        "aws-cdk-lib": "2.93.0",
+        "aws-cdk-lib": "2.185.0",
         "cdk-nag": "^2.18.43",
         "constructs": "^10.2.69",
         "esbuild": "^0.19.2",
